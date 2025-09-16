@@ -1,0 +1,19 @@
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items:  center;
+  justify-content:  center;
+  border-radius: $border-radius;
+  border: $border-width dashed $border-color;
+  padding: $spacer * 5;
+  text-align: center;
+
+  @include element('icon') {
+    color: rgba($gray-900, .4);
+    margin-bottom: $spacer * 2;
+  }
+
+  @include element('text') {
+    color: rgba($gray-900, .8);
+  }
+}

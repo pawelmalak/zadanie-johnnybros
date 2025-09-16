@@ -1,0 +1,57 @@
+// Insert typography styles here
+@font-face {
+  font-family: 'Inter';
+  src: url('../../fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 400 700; /* zakres wag */
+  font-style: normal;
+  font-display: swap;
+}
+
+h1, h2, h3, h4, h5, h6, p,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-top: 0;
+  margin-bottom: $spacer * 2;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h3, .h3 {
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-lg;
+}
+
+ul, ol {
+  padding-left: 0;
+}
+
+li {
+  margin: 0 0 $spacer $spacer * 2.5;
+
+  &::marker {
+    color: rgba($gray-900, .6);
+  }
+}
+
+b {
+  font-weight: $font-weight-semibold;
+}
+
+code {
+  background: rgba($blue-500, .15);
+  padding: $spacer * .25 $spacer * .5;
+  border-radius: $border-radius * .25;
+  font-size: 90%;
+}
+
+a {
+  transition: $transition-base color;
+  text-decoration: none;
+  font-weight: $font-weight-bold;
+  color: $blue-600;
+
+  &:hover {
+    color: $blue-500;
+  }
+}

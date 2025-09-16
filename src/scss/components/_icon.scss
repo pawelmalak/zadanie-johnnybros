@@ -1,0 +1,9 @@
+.icon {
+  width: $icon-size;
+  height: $icon-size;
+
+  @include modifier('lg') {
+    width: $icon-size-lg;
+    height: $icon-size-lg;
+  }
+}

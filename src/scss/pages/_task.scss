@@ -1,0 +1,11 @@
+.task-page {
+  padding: $spacer * 6 0;
+
+  @include element('placeholder') {
+    margin-bottom: $spacer * 2;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: $spacer * 3;
+    }
+  }
+}

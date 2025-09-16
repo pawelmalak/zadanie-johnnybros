@@ -1,0 +1,41 @@
+.instructions {
+  border-radius: $border-radius;
+  border: $border-width solid $border-color;
+  background: $white;
+
+  @include element('segment') {
+    padding: $spacer * 3;
+    border-bottom: $border-width solid $border-color;
+
+    @include media-breakpoint-up('md') {
+      padding: $spacer * 5;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  @include element('logo-wrapper') {
+    display: block;
+    margin-bottom: $spacer * 2;
+  }
+
+  @include element('logo') {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+  }
+
+  @include element('box') {
+    border-radius: $border-radius;
+    background: $blue-100;
+    padding: $spacer * 3;
+    margin-bottom: $spacer * 2;
+
+    @include media-breakpoint-up('md') {
+      margin-bottom: 0;
+      height: 100%;
+    }
+  }
+}
