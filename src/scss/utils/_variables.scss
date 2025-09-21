@@ -6,8 +6,21 @@ $blue-500: #4a6cf7;
 $blue-600: #2951f7;
 
 $gray-50: #f8fafc;
+$gray-100: #f1f4f8;
+$gray-200: #e0e6ee;
 $gray-300: #cbd5e1;
+$gray-500: #ced8ff;
+$gray-600: #596574;
 $gray-900: #0f172a;
+
+$chart-gray: #94a3b8;
+$chart-gray-900: #334155;
+
+$chart-green: #0ebca7;
+$chart-green-900: #11423c;
+
+$chart-red: #f45b69;
+$chart-red-900: #4e2529;
 
 // Spacer
 $spacer: 8px;
@@ -39,18 +52,17 @@ $transition-base: 0.2s ease-in-out;
 
 // Grid
 $grid-breakpoints: (
-        xs: 0,
-        md: 799px,
-        lg: 1280px,
+  xs: 0,
+  md: 799px,
+  lg: 1280px
 );
-
 
 $container-max-widths: (
-        md: 1140px,
+  md: 1140px
 );
 
-$name:                                                  xs;
-$flexboxgrid-grid-columns:                              12;
-$flexboxgrid-gutter-width:                              8px;
-$flexboxgrid-outer-margin:                              $flexboxgrid-gutter-width * 2 !default;
-$gutter-compensation:                                   $flexboxgrid-outer-margin * .5 * -1 !default;
+$name: xs;
+$flexboxgrid-grid-columns: 12;
+$flexboxgrid-gutter-width: 8px;
+$flexboxgrid-outer-margin: $flexboxgrid-gutter-width * 2 !default;
+$gutter-compensation: $flexboxgrid-outer-margin * 0.5 * -1 !default;

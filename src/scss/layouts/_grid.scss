@@ -37,7 +37,6 @@
   $size: nth($breakpoint, 2);
 
   @include media-breakpoint-up($name) {
-
     .col-#{ $name } {
       @include flexboxgrid-sass-col-common;
       flex-basis: 0;

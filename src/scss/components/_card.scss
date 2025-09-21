@@ -1,0 +1,317 @@
+.card {
+  background-color: $white;
+  width: 100%;
+  min-height: 120px;
+  border-radius: 8px;
+
+  position: relative;
+  -webkit-box-shadow: 0px 6px 15px -9px rgba(151, 151, 151, 1);
+  -moz-box-shadow: 0px 6px 15px -9px rgba(151, 151, 151, 1);
+  box-shadow: 0px 6px 15px -9px rgba(151, 151, 151, 1);
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 32px;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  &__badge {
+    width: 32px;
+    height: 24px;
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    border-radius: 0 10px 10px 0;
+    background-color: $gray-200;
+    color: $gray-900;
+    font-size: 12px;
+    @include center-flex;
+
+    &--placeholder {
+      background-color: $gray-100;
+    }
+
+    &--highlighted {
+      background-color: $blue-500;
+      color: $white;
+    }
+  }
+
+  &__team {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid $gray-100;
+
+      &--placeholder {
+        background-color: $gray-100;
+      }
+    }
+
+    &-name {
+      font-weight: bold;
+
+      &--placeholder {
+        width: 132px;
+        height: 20px;
+        background-color: $gray-100;
+        border-radius: 16px;
+      }
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 14px;
+    color: $gray-600;
+
+    &-bar {
+      background-color: $chart-gray;
+      width: 100%;
+      height: 4px;
+      border-radius: 16px;
+      position: relative;
+
+      &--placeholder {
+        background-color: $gray-100;
+        height: 10px;
+
+        &::before {
+          display: none;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+
+      &::before {
+        content: '';
+        height: inherit;
+        width: var(--width-won);
+        background-color: $chart-green;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 16px 0 0 16px;
+      }
+
+      &::after {
+        content: '';
+        height: inherit;
+        width: var(--width-lost);
+        background-color: $chart-red;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-radius: 0 16px 16px 0;
+      }
+    }
+
+    &-details {
+      align-self: flex-end;
+      display: flex;
+      gap: 1rem;
+
+      &--placeholder {
+        width: 100px;
+        height: 10px;
+        background-color: $gray-100;
+        border-radius: 16px;
+      }
+    }
+  }
+
+  &__points {
+    width: 120px;
+    height: 32px;
+    align-self: flex-end;
+    background-color: $blue-500;
+    color: $white;
+    border-radius: 6px;
+    padding: 18px;
+    @include center-flex;
+
+    &--placeholder {
+      height: 48px;
+      background-color: $gray-100;
+    }
+  }
+
+  &__footer {
+    border-top: 2px solid #dee5ec;
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    user-select: none;
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &-cell {
+      min-width: 200px;
+      background-color: $blue-100;
+      padding: 4px 0;
+      border-radius: 6px;
+      font-size: 12px;
+      color: $gray-600;
+      @include center-flex;
+
+      &--vertical {
+        flex-direction: column;
+
+        & :last-child {
+          color: $blue-500;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    &:hover {
+      cursor: grab;
+    }
+
+    &--is-dragged {
+      cursor: grabbing !important;
+    }
+
+    &-results {
+      @include center-flex;
+      gap: 3px;
+      margin-left: 10px;
+    }
+
+    &-result {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-weight: bold;
+      @include center-flex;
+
+      &--draw {
+        background-color: $chart-gray;
+        color: $chart-gray-900;
+      }
+
+      &--win {
+        background-color: $chart-green;
+        color: $chart-green-900;
+      }
+
+      &--lose {
+        background-color: $chart-red;
+        color: $chart-red-900;
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .card {
+    min-height: 80px;
+
+    &__body {
+      flex-direction: row;
+    }
+
+    &__stats {
+      flex-grow: 1;
+      justify-content: center;
+
+      &-bar {
+        width: 400px;
+        align-self: flex-end;
+      }
+    }
+
+    &__points {
+      align-self: center;
+    }
+
+    &__footer {
+      &-cell {
+        min-width: 170px;
+
+        &--horizontal {
+          min-width: 360px;
+        }
+
+        &--vertical {
+          min-width: 220px;
+        }
+      }
+
+      &-results {
+        gap: 5px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1140px) {
+  .card {
+    &__body {
+      flex-direction: row;
+    }
+
+    &__stats {
+      flex-direction: row;
+      justify-content: flex-end;
+
+      &-bar {
+        align-self: center;
+        width: 230px;
+      }
+
+      &-details {
+        align-self: center;
+        min-width: 140px;
+        justify-content: end;
+      }
+    }
+
+    &__footer {
+      overflow: hidden;
+
+      &:hover {
+        cursor: default;
+      }
+
+      &--is-dragged {
+        cursor: default !important;
+      }
+
+      &-cell {
+        min-width: 170px;
+
+        &--horizontal {
+          min-width: 330px;
+        }
+
+        &--vertical {
+          flex-grow: 1;
+          flex-basis: 0;
+        }
+      }
+
+      &-results {
+        gap: 5px;
+      }
+    }
+  }
+}

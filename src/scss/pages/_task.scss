@@ -1,11 +1,12 @@
-.task-page {
-  padding: $spacer * 6 0;
+.content {
+  padding: $flexboxgrid-outer-margin 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-  @include element('placeholder') {
-    margin-bottom: $spacer * 2;
-
-    @include media-breakpoint-up(md) {
-      margin-bottom: $spacer * 3;
-    }
+@media (min-width: 1140px) {
+  .content {
+    gap: 0.8rem;
   }
 }

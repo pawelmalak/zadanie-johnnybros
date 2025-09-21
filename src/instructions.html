@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Zadanie rekrutacyjne JohnnyBros - Frontend Developer</title>
+	<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="task-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="task">
+					<h1>app</h1>
+				</div>
+				<div class="task-page__placeholder placeholder">
+					<img src="assets/icons/manufacturing_24dp.svg" class="svg icon icon--lg placeholder__icon">
+					<div class="placeholder__text">W tym miejscu oczekujemy Twojego zadania. Możesz usunąć ten placeholder.</div>
+				</div>
+				<div class="instructions">
+					<div class="instructions__segment">
+						<a class="instructions__logo-wrapper" target="_blank" href="https://johnnybros.com/">
+							<img src="assets/logo.svg" class="instructions__logo" alt="johnnybros" title="JohnnyBros">
+						</a>
+						<h3>Instrukcje do zadania</h3>
+						<p>Twoim zadaniem jest przygotowanie widoku rankingu drużyn Premier League z sezonu 2024/2025 na podstawie projektu utworzonego w Figmie.
+							Podczas tworzenia zadania istotne jest, aby skorzystać z dostępnego API, które zostanie podlinkowane poniżej.
+						</p>
+						<b>Wytyczne do zadania:</b>
+						<ul>
+							<li>Twój kod powinien być <b>responsywny</b>, pisany w podejściu <b>mobile-first</b>. Projekt został przygotowany dla rozdzielczości <b></b>mobile, tablet i desktop</b>. Zakodowany przez Ciebie widok powinien zachowywać się poprawnie i wyglądać dobrze na wszystkich rozdzielczościach - nie tylko na breakpointach zawartych w projekcie, ale także pomiędzy nimi. Minimalna szerokość urządzenia to 320px.</li>
+							<li>Kodowany widok potraktuj tak, jakby był on częścią większego serwisu. W związku z tym powinieneś utworzyć logiczny podział na komponenty, korzystać z utworzonych mixinów, funkcji, zmiennych i w razie potrzeb je rozszerzać oraz dodawać nowe.</li>
+							<li>Nie stosuj gotowych frameworków (typu Bulma, Bootstrap) - zależy nam na własnoręcznie pisanym kodzie.</li>
+							<li>Nie używaj ChatGPT ani innych LLM w celu pisania kodu. Chcemy zobaczyć <b>Twoje</b> umiejętności :)</li>
+							<li>Podczas pisania kodu korzystaj z metodologii <b>BEM</b> (Block, Element, Modifier).</li>
+							<li>Layout utwórz tak, aby był on gotowy na dłuższe lub krótsze warianty tekstu - gdyby, dla przykładu, pojawiła dłuższa nazwa drużyny, lub któryś z tekstów został przetłumaczony na inny język.</li>
+							<li>Kod JS możesz pisać zarówno w <b>vanilla JS</b>, jak i z pomocą <b>jQuery</b>.</li>
+							<li>Po zakończeniu zadania, wgraj je na <b>własne, publiczne repozytorium Githuba</b>. Adres URL prowadzący do repo wyślij na maila, z którego zostało do Ciebie nadesłane zadanie.</li>
+						</ul>
+						<div class="row">
+							<div class="col-xs-12 col-md-6">
+								<div class="instructions__box">
+									<h3>PROJEKT</h3>
+									<p>Projekt znajduje się w katalogu <code>frontend-task/materials</code>. Plik <code>.fig</code> wrzuć do Figmy. Możesz skorzystać zarówno z wersji webowej, jak i dekstopowej - w obu przypadkach musisz najpierw utworzyć konto.</p>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<div class="instructions__box">
+									<h3>API</h3>
+									<a target="_blank" href="https://www.thesportsdb.com/api/v1/json/123/lookuptable.php?l=4328&s=2024-2025">Link do API</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="instructions__segment">
+						<b>Wytyczne do projektu:</b>
+						<ul>
+							<li>Po załadowaniu strony musi wyświetlić się najpierw Skeleton Placeholder. Dane z API powinny zostać pobrane dopiero na pierwszy scroll użytkownika.</li>
+							<li>W załączonym API dostępnych jest 5 pierwszych pozycji z rankingu Premier League na sezon 2024/2025. Każda z drużyn zawiera elementy takie jak: <b>nazwa drużyny, logo, punkty, wygrane / przegrane / zremisowane mecze, formę drużyny</b>, a także <b>bilans strzelonych i straconych bramek</b>.</li>
+							<li>Projekt zawiera wyszukiwarkę, która ma wyszukiwać drużyny po ich nazwie. Wyszukiwarka powinna działać z użyciem JS. W przypadku braku wyników przygotuj <b>Empty State</b> (zawarty w projekcie).</li>
+							<li>Zakoduj <b>Error State</b> na wypadek, gdyby API nie działało - na Figmie jest zawarta karta z odpowiednią treścią, w zakładce <b>Main</b>.</li>
+							<li>Na rozdzielczościach tabletowych i mobilnych, rząd z formą i bilansem goli jest horyzontalnie scrollowany.</li>
+							<li><code>strForm</code> to forma drużyny - ostatnie 5 rozegranych meczów. Jest ona zapisywana w formie stringa z 5 literami. W oznacza wygraną, L - przegraną, a D - remis. Pierwsza litera w stringu to ostatnio rozegrany mecz. Element "Form" zakoduj tak, aby ostatnio zagrany mecz był tym <b>znajdującym się najbardziej po prawej stronie</b> tego komponentu.</li>
+						</ul>
+						<div class="instructions__box">
+							<b>Porady odnośnie Figmy:</b>
+							<ul>
+								<li>W sidebarze, po lewej stronie możesz przełączać sobie pomiędzy zakładkami <b>TEMPLATES, Sections, Header i Main</b>.</li>
+								<li>Elementy są nazwane analogicznie do ich odpowiednika w API - w projekcie możesz znaleźć takie elementy jak <code>intRank, strBadge, intWin</code> itd.</li>
+								<li>Możesz otworzyć interaktywny prototyp zaznaczając artboard w zakładce <b>TEMPLATES</b>, a następnie kilkając przycisk <b>Present</b> w prawym górnym rogu (z ikonką play).</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://unpkg.com/inline-svg/dist/inlineSVG.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script type="module" src="js/app.js"></script>
+</body>
+</html>

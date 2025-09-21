@@ -1,0 +1,9 @@
+.feedback {
+  @include center-flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background-color: $white;
+  padding: 1.2rem;
+  border-radius: 8px;
+  text-align: center;
+}
